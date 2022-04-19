@@ -1,23 +1,26 @@
 package com.example.mvvmbinding
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel: ViewModel() {
 
-    val score = MutableLiveData<Int>()
+    private val _score = MutableLiveData<Int>()
+    val score: LiveData<Int>
+    get() = _score
 
     init {
         Log.i("MainViewModel", "MainViewModel created")
-        score.value = 0
+        _score.value = 0
     }
 
     fun onAdd(){
-        score.value = (score.value)?.plus(1)
+        _score.value = (score.value)?.plus(1)
     }
 
     fun onSubtract(){
-        score.value = (score.value)?.minus(1)
+        _score.value = (score.value)?.minus(1)
     }
 }
