@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MVVMbinding</string>
+    <string name="button_name">Add</string>
+    <string name="subtract_text">Subtract</string>
+</resources>
