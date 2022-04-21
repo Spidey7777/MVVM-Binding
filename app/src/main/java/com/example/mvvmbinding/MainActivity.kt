@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         binding.mainViewModel = viewModel
+        binding.setLifecycleOwner(this)
 
 //        binding.addButton.setOnClickListener {
 //            viewModel.onAdd()
@@ -29,9 +30,9 @@ class MainActivity : AppCompatActivity() {
 //            viewModel.onSubtract()
 //        }
 
-        viewModel.score.observe(this, Observer { newScore ->
-            binding.scoreText.text = newScore.toString()
-        })
+//        viewModel.score.observe(this, Observer { newScore ->
+//            binding.scoreText.text = newScore.toString()
+//        })
 
     }
 }
