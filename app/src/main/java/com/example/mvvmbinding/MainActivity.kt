@@ -19,13 +19,15 @@ class MainActivity : AppCompatActivity() {
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        binding.addButton.setOnClickListener {
-            viewModel.onAdd()
-        }
+        binding.mainViewModel = viewModel
 
-        binding.subtractButton.setOnClickListener {
-            viewModel.onSubtract()
-        }
+//        binding.addButton.setOnClickListener {
+//            viewModel.onAdd()
+//        }
+//
+//        binding.subtractButton.setOnClickListener {
+//            viewModel.onSubtract()
+//        }
 
         viewModel.score.observe(this, Observer { newScore ->
             binding.scoreText.text = newScore.toString()
